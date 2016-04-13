@@ -2,7 +2,7 @@
 title: 快速开始
 ---
 
-DCE 提供了一整套安装套件。你可以在10分钟之内安装 DaoCloud Enterprise (DCE)。 
+DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud Enterprise (DCE)。 
 
 这个页面将帮助你在你的主机上安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的一些应用。本页面的安装方式适用于 Linux 操作系统。如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)查看更详细的 DCE 安装与部署方案。 
 
@@ -45,7 +45,6 @@ ntpdate -u  pool.ntp.org
 ```
 
 你需要配置 NTP 后台进程来保持时间一直同步。
-
 
 ## 安装控制器
 
@@ -111,12 +110,8 @@ DCE Engine 安装方法如下。
 ![](deploy_application_3.png)
 >>>>> 在应用配置部署环节，可以通过修改「Compose YML」配置应用。 
 
-
 ## 管理应用
 DCE 通过 WEB UI 提供了一套完整的 DCE 控制台。通过访问 Master 机器的 IP，进入 DCE 控制台。在 DCE 控制台，你可以对应用，容器，存储卷，网络，主机等进行配置和修改。
 在本次示例中，安装完 2048 应用后，DCE 将自动跳转到应用管理页面，你可以在该页面对应用进行更加精细的控制和管理。
 ![](application_manage.png)
 >>>>> 更多应用管理的信息，可以参考[应用管理](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)
-
-
-
