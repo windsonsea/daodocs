@@ -1,3 +1,95 @@
+# v1.0.9
+## 02/11/2016
+
+1. [](#bugfix)
+    * Fix language translation files
+
+# v1.0.8
+## 02/05/2016
+
+1. [](#new)
+    * Added a logout button when not authorized to access a page in Admin
+    * Added the option to hide a tab from an extended blueprint (https://github.com/getgrav/grav/issues/620)
+    * Many new languages and updates to existing languages from the Translation team.
+1. [](#improved)
+    * Check frontmatter for validity prior to saving
+    * Add noindex, nofollow across the entire admin theme if no other robots headers are set on a page
+    * Allow to hide a configuration blueprint section / tab and still save its values
+    * Allow to show user defined blueprints in configuration
+    * Updated FontAwesome to latest 4.5.0 version
+1. [](#bugfix)
+    * Fixed an issue with user registration on Linux caused by `glob()` possibly returning false.
+    * Fixed an issue preventing Admin to work correctly in a multisite configuration
+    * Fixed preview and insertion of images with non-lowercase extension
+    * Fixed an incorrect number of pages being displayed in the sidebar in some cases
+    * [Security] Don't reveal Grav filesystem path when trying to delete non-existing images
+    * [Security] Fix PHP error happening when uploading file without extension if the JS dropzone uploader is configured to allow empty file extensions
+    * [Security] Ensure correct escaping in various Twig files
+
+# v1.0.7
+## 01/15/2016
+
+1. [](#new)
+    * Added onAdminDashboard event
+    * Added onAdminSave event
+    * New lang strings for reverse proxy toggle
+1. [](#improved)
+    * More robust YAML file checking in config folders
+    * Removed deprecated menu event
+    * Removed old logs code
+    * Used new onAdminDashboard event for current dashboard widgets 
+1. [](#bugfix)
+    * Fix for missing access checks on config pages #397
+    * Fix parent not loaded on admin form save #587
+    * When no route field is added to a page blueprint, add it as page root
+    * Fix for wrong page count (will show dynamic added pages in count too - Need to fix this)
+    * Fix for IE/Edge saving forms #391
+
+# v1.0.6
+## 01/07/2016
+
+1. [](#bugfix)
+    * Fix for forms appending `_json` fields on every save
+
+# v1.0.5
+## 01/07/2016
+
+1. [](#new)
+    * Added a pointer to Grav's contributing guide
+    * Handle the optional logic to strip home from Page routes and urls
+    * The Configuration page now shows any blueprint found in the user/blueprints/config/ folder, thus allowing to add custom configurations 
+1. [](#improved)
+    * Allow the nonce for a POST action to be set in the query url
+    * Add a fallback twig template to use in case Twig cannot find a template file
+    * Modified update Theme and Plugin buttons to use more reliably markup
+1. [](#bugfix)
+    * Fix additional `on` parameter when saving plugins configs that contain tabs in their blueprint
+    * Fixes for the `pagemediaselect` form field 
+    * Fix an untranslated message in the logout form when `system.languages.translations` is disabled
+    * Fixed a hardcoded `http://` reference throwing warnings under HTTPS
+    * Ensure download package has `.zip` extension, just in case
+
+# v1.0.4
+## 12/22/2015
+
+1. [](#improved)
+    * Improved File input field for admin
+    * Restore file inputs functionality and process form via JS if no inputs found
+1. [](#bugfix)
+    * Fix for the image preview in the file field on multi-lang sites
+    * Fix problem in form code introduced by fix to allow file uploads
+    * Fix redirect in deleting page media
+
+# v1.0.3
+## 12/20/2015
+
+1. [](#new)
+    * Added `pagemediaselect` field for use in pages
+1. [](#improved)
+    * Updated various languages
+    * Check for method `meetsRequirements()` prior to using
+    * Enable `file` form field to be used in plugins and theme blueprints
+
 # v1.0.2
 ## 12/18/2015
 

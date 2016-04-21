@@ -63,6 +63,17 @@ class EmailPlugin extends Plugin
                 // Build message
                 $message = $this->buildMessage($params, $vars);
 
+                if (isset($params['attachments'])) {
+                    $filesToAttach = (array)$params['attachments'];
+                    if ($filesToAttach) foreach ($filesToAttach as $fileToAttach) {
+                        $filesValues = $form->value($fileToAttach);
+                        if ($filesValues) foreach($filesValues as $fileValues) {
+                            $filename = $fileValues['file'];
+                            $message->attach(\Swift_Attachment::fromPath($filename));
+                        }
+                    }
+                }
+
                 // Send e-mail
                 $this->email->send($message);
                 break;
@@ -98,6 +109,13 @@ class EmailPlugin extends Plugin
 
         // Create message object.
         $message = $this->email->message();
+
+        if (!$params['to']) {
+            throw new \RuntimeException($this->grav['language']->translate('PLUGIN_EMAIL.PLEASE_CONFIGURE_A_TO_ADDRESS'));
+        }
+        if (!$params['from']) {
+            throw new \RuntimeException($this->grav['language']->translate('PLUGIN_EMAIL.PLEASE_CONFIGURE_A_FROM_ADDRESS'));
+        }
 
         // Process parameters.
         foreach ($params as $key => $value) {
