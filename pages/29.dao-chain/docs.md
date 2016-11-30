@@ -26,7 +26,7 @@ https://github.com/daocloud/dao-chain
 
 1. 选择“云端镜像”，这里是您保存在 DaoCloud 上的镜像。
 2. 拉取您需要签名的镜像。
-3. 点击签名，后台会计算校验码病以您当前使用的区块链钱包地址发布签名，系统会等待区块被确认所以会等待一段时间
+3. 点击签名，后台会计算校验码并以您当前使用的区块链钱包地址发布签名，系统会等待区块被确认所以会等待一段时间
 4. 完成后签名后登录 DaoCloud 选择公开镜像，可以在 DaoChain “镜像市场” 看到
 
 申请测试代币或咨询请联系 [support@daocloud.io](mailto:support@daocloud.io)
