@@ -10,6 +10,7 @@ title: 从云端测试环境迁移到自有主机
 * [迁移应用到自有主机](http://docs-static.daocloud.io/faq/migrate-from-cloud-limited-env-to-your-own-host#-1)
 * [从云端 Mysql 导出数据](http://docs-static.daocloud.io/faq/migrate-from-cloud-limited-env-to-your-own-host#mysql)
 * [从云端 Volume 导出数据](http://docs-static.daocloud.io/faq/migrate-from-cloud-limited-env-to-your-own-host#volume)
+* [从云端 Postgres 导出数据](http://docs-static.daocloud.io/faq/migrate-from-cloud-limited-env-to-your-own-host#postgres)
  
 ##### 准备您的自有主机
 请先准备一台用于生产环境的主机
@@ -115,3 +116,41 @@ title: 从云端测试环境迁移到自有主机
 或者多项选择文件，右键下载：
 
 ![](6-下载全部.png)
+
+##### 导出云端 Postgres 的数据
+
+首先在Volume页面创建一个Volume，用于保存导出的数据：
+
+![](pg1.png)
+
+在镜像仓库里搜索 “pg_dumpall”:
+
+![](pg2.png)
+
+点击部署:
+
+![](pg3.png)
+
+配置基本信息:
+
+![](pg4.png)
+
+绑定要导出的pg数据库：
+
+![](pg5.png)
+
+绑定Volume，容器路径为 /data：
+
+![](pg6.png)
+
+查看应用的日志，如果出现提示导出成功的日志，则表明导出数据库成功：
+
+![](pg7.png)
+
+打开Volume管理器：
+
+![](pg8.png)
+
+即可看到已经导出的sql文件，右键可以直接下载到本地：
+
+![](pg9.png)
