@@ -11,7 +11,7 @@ DaoChain 结合了区块链的去中心化特性与镜像加密校验技术，�
 使用方式
 
 请前往代码仓库查看
-https://github.com/DaoCloud/blockchain-hub
+https://github.com/daocloud/dao-chain
 
 使用流程
 
